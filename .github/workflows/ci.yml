@@ -24,4 +24,6 @@ jobs:
       - run: npm run build
       - run: npm run swagger
       - run: npm audit --omit=dev --audit-level=high
+      - run: docker build -f Dockerfile.prod -t ci-check . # para que falle si el docker no compila
+
       #falta npm test cuando haya un runner de tests
